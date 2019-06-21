@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Filter"
+            android:textSize="14.7sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="22dp"
+            android:fontFamily="@font/nunito_regular"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/filterrestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingLeft="22dp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rect"
+        android:textColor="#FFFFFF"
+        android:text="OK"
+        android:layout_marginLeft="13.3dp"
+        android:layout_marginRight="13.3dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/nunito_regular"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <include layout="@layout/toolbar"/>
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <TextView
+
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:hint="Product Name"
+            android:text="Candle holder"
+            android:textSize="20dp" />
+
+
+        <TextView
+
+            android:id="@+id/price"
+            android:layout_marginTop="20dp"
+
+
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="20 DT"
+         android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Price" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/thumbnailPic"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ss"
+
+
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            >
+
+        </LinearLayout>
+
+
+        <TextView
+
+            android:id="@+id/description"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+
+            android:textSize="20dp"
+            android:text="handmade candle holders to shine bright like a diamond. Enjoy.."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Price" />
+
+
+    </LinearLayout>
+</FrameLayout>
