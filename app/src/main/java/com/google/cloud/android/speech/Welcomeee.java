@@ -531,7 +531,8 @@ setFragment(UserListFragment);
 public void onCallCanceled(JSONObject data){
     dialog.dismiss();
 }
-
+    @Override
+    public  void onEndCall(JSONObject data){}
 }
 
 

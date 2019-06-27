@@ -29,6 +29,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -113,6 +114,7 @@ public  class Callactivity extends AppCompatActivity  implements MessageDialogFr
     String socketId;
     String State="";
     String text;
+    ImageButton Button;
 
     public void sendMessage( String message, String state) {
 
@@ -214,9 +216,21 @@ public  class Callactivity extends AppCompatActivity  implements MessageDialogFr
         Toast.makeText(Callactivity.this, "beginning of speech recognition ...", LENGTH_SHORT).show();
         String bb = getIntent().getStringExtra("mlanguage");
         mlanguage = SupportedLanguages.fromLabel(bb);
+
        // mlanguage="French";
         String aa=getIntent().getStringExtra("TargetLanguage");
         TargetLanguage =SupportedLanguages.fromLabel(aa );
+        // Disconnecting..
+        Button = findViewById(R.id.disconnect);
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                disconnect();
+
+            }
+        });
+
       //  TargetLanguage= "English";
         fortts=SupportedLanguages.totts(bb );
         SignalingClient.get().init(this, username);
@@ -278,7 +292,26 @@ if (Translation.equals("ON") && ! mlanguage.equalsIgnoreCase(TargetLanguage))
         }
     }
 
+    private void disconnect()
+    {
+        peerConnectionMap.clear();
 
+        peerConnectionFactory= null;
+        SignalingClient.get().endCall(username, socketId);
+        SignalingClient.get().destroy();
+        localView.clearImage();
+        localView = null;
+        remoteView = null;
+        eglBaseContext = null;
+        remoteView.init(eglBaseContext, null);
+        localView.init(eglBaseContext, null);
+        mediaStream = null;
+        Intent intent = new Intent(getApplicationContext(), Welcomeee.class);
+
+
+        startActivity(intent);
+        finish();
+    }
 
     private void start() {
         peerConnectionMap = new HashMap<>();
@@ -315,11 +348,16 @@ if (Translation.equals("ON") && ! mlanguage.equalsIgnoreCase(TargetLanguage))
         videoCapturer.startCapture(480, 640, 30);
 
         localView = findViewById(R.id.pip_video_view);
-        localView.setMirror(true);
-        localView.init(eglBaseContext, null);
+
         remoteView .setMirror(false);
         remoteView.init(eglBaseContext, null);
         // create VideoTrack
+        localView.setMirror(true);
+        localView.init(eglBaseContext, null);
+        remoteView.setZOrderOnTop(false);
+        localView.setZOrderOnTop(true);
+        localView.setZOrderMediaOverlay(true);
+
         VideoTrack videoTrack = peerConnectionFactory.createVideoTrack("100", videoSource);
 //        // display in localView
         videoTrack.addSink(localView);
@@ -520,6 +558,7 @@ if (Statee == 'T'){
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        disconnect();
         SignalingClient.get().destroy();
     }
     @Override
@@ -749,4 +788,8 @@ if (Statee == 'T'){
     }
     @Override
     public  void onCallCanceled(JSONObject data){}
+    @Override
+    public  void onEndCall(JSONObject data){
+        disconnect();
+    }
 }

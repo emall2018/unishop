@@ -92,6 +92,11 @@ public class SignalingClient {
 
                         callback.onMessageReceived(data);
                     }
+                    if("endCall".equals(type)) {
+
+
+                        callback.onEndCall(data);
+                    }
                     else if("CancelCall".equals(type)) {
                         callback.onCallCanceled(data);
                     }
@@ -207,6 +212,22 @@ public  void initCall(String username, String callee, String Language)
     }
 
 }
+
+    public  void endCall(String username, String callee)
+    {
+        JSONObject jo = new JSONObject();
+        try {
+            jo.put("type", "endCall");
+
+            jo.put("from", username);
+            jo.put("to", callee);
+
+            socket.emit("message", jo);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
     public interface Callback {
 
         void onMessageReceived (JSONObject data);
@@ -216,6 +237,7 @@ void onCallAcepted(JSONObject data);
       void onAnswerReceived(JSONObject data);
        void onIceCandidateReceived(JSONObject data);
        void onCallCanceled(JSONObject data);
+       void onEndCall(JSONObject data);
     }
 
 }
