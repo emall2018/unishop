@@ -243,6 +243,10 @@ public class Welcomeee extends AppCompatActivity implements   View.OnClickListen
                     Log.i(TAG, "Intent name: " + metadata.getIntentName());
                 }
 
+
+
+
+
                 if (params != null && !params.isEmpty()) {
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {
