@@ -647,6 +647,8 @@ if (Statee == 'T'){
         mVoiceRecorder.start();
     }
 
+
+
     private void stopVoiceRecorder() {
         if (mVoiceRecorder != null) {
             mVoiceRecorder.stop();
