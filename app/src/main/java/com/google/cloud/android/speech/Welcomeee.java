@@ -251,6 +251,7 @@ public class Welcomeee extends AppCompatActivity implements   View.OnClickListen
                     }
                 }
 
+
                 //Update view to bot says
                 final Message receivedMessage = new Message.Builder()
                         .setUser(UniSpeech)
