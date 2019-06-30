@@ -34,7 +34,7 @@ public class Profilelists extends AppCompatActivity {
     private BookOrderAdapter bAdapter;
     private SharedPreferences mSharedPreferences;
     private Integer image[] = {R.drawable.avatar};
-    private String txt[]={ "Ahmed"};
+    private String txt[]={ "ahmed"};
     private String mToken;
     private CompositeSubscription mSubscriptions;
 

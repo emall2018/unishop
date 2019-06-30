@@ -25,7 +25,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:hint="Product Name"
-            android:text="Candle holder"
+            android:text="mugs"
             android:textSize="20dp" />
 
 
@@ -37,7 +37,7 @@
 
             android:gravity="center"
             android:textSize="20dp"
-            android:text="20 DT"
+            android:text="10 DT"
          android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Product Price" />
@@ -55,7 +55,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:scaleType="centerCrop"
-                android:background="@drawable/ss"
+                android:background="@drawable/mugs"
 
 
                 />
@@ -80,7 +80,7 @@
             android:gravity="center"
 
             android:textSize="20dp"
-            android:text="handmade candle holders to shine bright like a diamond. Enjoy.."
+            android:text="handmade ceramic mugs for a better coffee drinking experience "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Product Price" />

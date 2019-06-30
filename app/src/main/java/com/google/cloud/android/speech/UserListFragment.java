@@ -45,7 +45,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class UserListFragment extends Fragment {
 
 int load=0;
-    String[] country = { "English", "French", "Arabic", "Spanish", "German","Turkish"};
+    String[] country = { "English", "French", "Arabic", "Spanish", "German"};
     private CompositeSubscription mSubscriptions;
     private SharedPreferences mSharedPreferences;
     private String mToken;
@@ -65,7 +65,7 @@ private ImageView Home;
     private CollectionAdapter collectionAdapter;
 
     private Integer image[] = {R.drawable.butt , R.drawable.ss, R.drawable.dd,
-            R.drawable.bb};
+            R.drawable.bb, R.drawable.mugs};
     private String title[] = {"Winter","Summer","T-Shirts","Formal Shirts","Sunglasses"};
     private String description[] = {"20 Wardrobes","96 Wardrobes","125 Wardrobes ","99 Wardrobes","439 Wardrobes"};
     public UserListFragment() {

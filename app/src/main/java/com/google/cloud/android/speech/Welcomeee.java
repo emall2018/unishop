@@ -247,6 +247,7 @@ public class Welcomeee extends AppCompatActivity implements   View.OnClickListen
 
 
 
+
                 if (params != null && !params.isEmpty()) {
                     Log.i(TAG, "Parameters: ");
                     for (final Map.Entry<String, JsonElement> entry : params.entrySet()) {

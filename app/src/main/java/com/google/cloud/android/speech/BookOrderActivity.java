@@ -22,8 +22,8 @@ public class BookOrderActivity extends AppCompatActivity {
     private ProfileAdapter bAdapter;
 
     private Integer image[] = {R.drawable.ss,R.drawable.dd,R.drawable.bb,R.drawable.haha,
-    R.drawable.aaaa,R.drawable.ggg};
-    private String txt[]={ "candle holder","bowl","jug","cup","ashtray","plates"};
+    R.drawable.aaaa,R.drawable.ggg,R.drawable.mugs };
+    private String txt[]={ "candle holder","bowl","jug","cup","ashtray","plates","mugs"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -29,7 +29,7 @@ import rx.subscriptions.CompositeSubscription;
 import static android.widget.Toast.LENGTH_SHORT;
 
 public class SignupActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    String[] language = { "English", "French", "Arabic", "Spanish", "German","Turkish"};
+    String[] language = { "English", "French", "Arabic", "Spanish", "German"};
     private static final String TAG = "SignupActivity";
     private CompositeSubscription mSubscriptions;
     @BindView(R.id.input_name) EditText _nameText;
